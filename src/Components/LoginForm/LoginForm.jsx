@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import { useNavigate } from 'react-router-dom'
-import Form from 'react-bootstrap/Form'
+import { useNavigate } from 'react-router-dom';
+import {Form, Button, Modal} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Login = (props) => {
     let navigate = useNavigate();
@@ -33,7 +34,6 @@ const Login = (props) => {
     <Form.Control type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)}/>
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
   </Form.Group>
   <Button variant="primary" type="submit">
     Submit

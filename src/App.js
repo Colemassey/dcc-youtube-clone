@@ -1,26 +1,28 @@
 import { Routes, Route } from 'react-router-dom'
 import {useEffect, useState} from 'react'
+import LoginForm from './Components/LoginForm/LoginForm'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   
-  const [user, setUser] = useState(null)
+  // const [user, setUser] = useState(null)
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    const jwt = localStorage.getItem('token');
-    try {
-      const decodedUser = jwt_decode(jwt);
-      setUser(decodedUser);
+  //   const jwt = localStorage.getItem('token');
+  //   try {
+  //     const decodedUser = jwt_decode(jwt);
+  //     setUser(decodedUser);
 
-    } catch { }
-  }, [])
+  //   } catch { }
+  // }, [])
 
 
   return (
     <div className="App">
-      <Nav/>
+      {/* <Nav/> */}
       <Routes>
-        <Route></Route>
+        <Route path="/" element={<LoginForm />} />
       </Routes>
     </div>
   );
