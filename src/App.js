@@ -25,7 +25,11 @@ function App() {
       <NavigationBar user={user} />
       <div>
         <Routes>
-          <Route path="/" element={<LoginForm />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path='/register' element= {<RegistrationForm />} />
+          <Route path='/login' element = {<LoginForm />} />
+          {/* <Route path='/logout' element={<Logout />} />
+          <Route path='*' element={<NotFound />} /> */}
         </Routes>
       </div>
     </div>
