@@ -7,7 +7,7 @@ import jwt_decode from 'jwt-decode';
 import RegistrationForm from './Components/RegistrationForm/RegistrationForm';
 import axios from 'axios';
 import Dashboard from './Components/Dashboard/Dashboard';
-// import HomePage from './Components/HomePage/HomePage';
+
 
 function App() {
   
