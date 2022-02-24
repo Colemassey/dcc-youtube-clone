@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import {Form, Button, Modal} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-const Login = (props) => {
+const LoginForm = (props) => {
     let navigate = useNavigate();
 
     const [username, setUsername] = useState('');
@@ -43,4 +43,4 @@ const Login = (props) => {
      );
 }
  
-export default Login;
+export default LoginForm;
