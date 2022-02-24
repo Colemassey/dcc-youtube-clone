@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-import {Form, Button, Modal} from 'react-bootstrap';
+import {Form, Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 const RegistrationForm = (props) => {
 
@@ -16,7 +17,7 @@ const RegistrationForm = (props) => {
             username: username,
             password: password
         }
-        props.loginUser(credentials)
+        props.createUser(credentials)
         navigate('/Dashboard')
     }
 
@@ -66,4 +67,4 @@ const RegistrationForm = (props) => {
      );
 }
  
-export default RegistrationForm;props
+export default RegistrationForm;
