@@ -8,12 +8,16 @@ const RegistrationForm = (props) => {
 
     let navigate = useNavigate();
 
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSubmit = (event) =>{
         event.preventDefault();
         let credentials = {
+            firstName: firstName,
+            lastName: lastName,
             username: username,
             password: password
         }
@@ -31,14 +35,21 @@ const RegistrationForm = (props) => {
 //         <Modal.Body>
 // form
         <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="formFirstName">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="text" placeholder="First Name" onChange={(event) => setFirstName(event.target.value)}/>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formLastName">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="text" placeholder="Last Name" onChange={(event) => setLastName(event.target.value)}/>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicUserName">
           <Form.Label>Username</Form.Label>
           <Form.Control type="username" placeholder="Enter username" onChange={(event) => setUsername(event.target.value)} />
           <Form.Text className="text-muted">
             We'll never share your username with anyone else.
           </Form.Text>
         </Form.Group>
-      
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)}/>
@@ -47,8 +58,6 @@ const RegistrationForm = (props) => {
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password Again</Form.Label>
           <Form.Control type="password" placeholder="Password Again" onChange={(event) => setPassword(event.target.value)}/>
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
         </Form.Group>
         <Button variant="primary" type="submit">
           Submit
