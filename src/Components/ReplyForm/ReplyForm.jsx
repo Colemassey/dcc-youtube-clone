@@ -8,8 +8,11 @@ const ReplyForm = (props) => {
 
     const handleSubmit = (event) =>{
         event.preventDefault();
+          let replies = {
+          reply: reply
+        }
 
-        props.loginUser(credentials)
+        props.loginUser(replies)
     }
 
 
@@ -17,9 +20,8 @@ const ReplyForm = (props) => {
     
     <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formUsername">
-          <Form.Label>{ username }</Form.Label>
+          <Form.Label>{ user.username }</Form.Label>
         </Form.Group>
-      
         <Form.Group className="mb-3" controlId="formBasicReply">
           <Form.Control type="text" placeholder="Reply to this comment" onChange={(event) => setReply(event.target.value)}/>
         </Form.Group>
