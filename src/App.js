@@ -6,7 +6,7 @@ import NavigationBar from './Components/NavigationBar/NavigationBar';
 import jwt_decode from 'jwt-decode';
 import RegistrationForm from './Components/RegistrationForm/RegistrationForm';
 import axios from 'axios';
-import Dashboard from './Components/Dashboard/Dashboard';
+import HomePage from './Components/HomePage/HomePage';
 
 
 function App() {
@@ -27,9 +27,16 @@ function App() {
     console.log(credentials)
     let response = await axios.post('http://127.0.0.1:8000/api/auth/register/', credentials);
     if(response.status === 201){
-      navigate('/Dashboard')
+      navigate('/')
 
      
+    }
+  }
+  async function loginUser(user){
+    console.log(user)
+    let response = await axios.post('http://127.0.0.1:8000/api/auth/login/')
+    if(response.data === 201){
+      navigate('/')
     }
   }
   return (
@@ -37,9 +44,9 @@ function App() {
       <NavigationBar user={user} />
       <div>
         <Routes>
-          <Route exact path='/*' element={<Dashboard/>} />
-          <Route path='/register' element= {<RegistrationForm createUser={createUser} />} />
-          <Route path='/login' element = {<LoginForm />} />
+          <Route exact path='/' element={<HomePage/>} />
+          <Route path='register' element= {<RegistrationForm createUser={createUser} />} />
+          <Route path='login' element = {<LoginForm loginUser={loginUser} />} />
         </Routes>
       </div>
     </div>
