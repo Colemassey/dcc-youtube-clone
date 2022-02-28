@@ -1,11 +1,12 @@
 import React from "react";
 import YoutubeEmbed from "./YoutubeEmbed";
+import HomePage from "../HomePage/HomePage";
 
 function VideoPlayer() {
   return (
     <div className="App">
       <h1>Youtube Embed</h1>
-      <YoutubeEmbed embedId="5GShV3iBEPk" />
+      <YoutubeEmbed embedId={searchVideoID} />
     </div>
   );
 }

@@ -7,12 +7,12 @@ const SearchBar = (props) => {
 
 
     function handleSubmit(event) {
-       event.preventDefault();
-       let newSearchTerm = '';
+    event.preventDefault();
+    let newSearchTerm = '';
 
 
-       setSearchTerm(newSearchTerm);
-       props.searchYouTube(searchTerm);
+    setSearchTerm(newSearchTerm);
+    props.searchYouTube(searchTerm);
     console.log(searchTerm);
     }
     return ( 
