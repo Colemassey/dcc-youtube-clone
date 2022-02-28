@@ -18,7 +18,7 @@ const HomePage = (props) => {
     
 
     async function getRelatedVideos (searchVideoID) {
-        let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${searchVideoID}&type=video&key=AIzaSyCA_6OGhIBDkYUzdjQOPRD535rx3l8GyP8`);
+        let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=81i78S1eBFs&type=video&key=AIzaSyCA_6OGhIBDkYUzdjQOPRD535rx3l8GyP8`);
         console.log(response)
         let relatedVideos = response.data.items.filter(video => video.snippet)
         setRelatedVideo(relatedVideos)
@@ -36,5 +36,5 @@ const HomePage = (props) => {
         </div>
      );
 }
- 
+
 export default HomePage;
