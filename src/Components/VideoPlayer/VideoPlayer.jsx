@@ -2,6 +2,7 @@ import React from "react";
 import { Card } from 'react-bootstrap';
 import {ListGroup, ListGroupItem} from 'react-bootstrap';
 import YoutubeEmbed from "./YoutubeEmbed";
+import HomePage from "../HomePage/HomePage";
 
 function VideoPlayer() {
   return (
