@@ -39,6 +39,7 @@ function App() {
       navigate('/')
     }
   }
+
   return (
     <div>
       <NavigationBar user={user} />

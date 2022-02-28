@@ -3,6 +3,7 @@ import SearchBar from '../SearchBar/SearchBar';
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
 
 const HomePage = (props) => {
+
     return ( 
 
         <div>
