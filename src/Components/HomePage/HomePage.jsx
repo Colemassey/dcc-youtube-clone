@@ -17,7 +17,7 @@ const HomePage = (props) => {
 
         <div>
             <SearchBar searchYouTube={searchYouTube} />
-            <VideoPlayer />
+            <VideoPlayer searchVideoID={searchVideoID} />
         </div>
      );
 }
