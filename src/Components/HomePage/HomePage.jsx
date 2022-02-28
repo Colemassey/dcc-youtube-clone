@@ -4,9 +4,6 @@ import VideoPlayer from '../VideoPlayer/VideoPlayer';
 import axios from 'axios';  
 
 const HomePage = (props) => {
-<<<<<<< HEAD
-
-=======
     
     const [searchVideoID, setSearchVideoID] = useState("")
     
@@ -16,7 +13,6 @@ const HomePage = (props) => {
         setSearchVideoID(response.data.items[0].id.videoId)
     }
     
->>>>>>> 0be6aa24f0911fbb2cbd801a0dad7262ab367c88
     return ( 
 
         <div>

@@ -39,11 +39,6 @@ function App() {
       navigate('/')
     }
   }
-<<<<<<< HEAD
-
-=======
- 
->>>>>>> 0be6aa24f0911fbb2cbd801a0dad7262ab367c88
   return (
     <div>
       <NavigationBar user={user} />
