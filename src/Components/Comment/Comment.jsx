@@ -5,7 +5,7 @@ const Comment = (props) => {
 
     async function getAllComments() {
         let response = await axios.get('http://127.0.0.1:8000/all/<str:video_id>');
-        setMusicLibrary(response.data);
+        setVideoComments(response.data);
     
       }
 
