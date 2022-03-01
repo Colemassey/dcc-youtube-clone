@@ -7,7 +7,7 @@ const RelatedVideos = (props) => {
       
     async function getRelatedVideos () {
         console.log(props.searchVideoID)
-        let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${props.searchVideoID}&type=video&key=AIzaSyCA_6OGhIBDkYUzdjQOPRD535rx3l8GyP8`);
+        let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${props.searchVideoID}&type=video&key=AIzaSyAfk3S2DKdW6G-hOoLYd0-uOi_PI_J0LTQ`);
         console.log(response.data)
         setRelatedVideo(response.data.items)
     }
@@ -18,9 +18,11 @@ const RelatedVideos = (props) => {
 
         return (
             relatedVideo.map((video) => {
+                console.log(video.id.videoId)
+
                 return (
                     <div>
-                    <li>{video.Id.videoId}</li>  
+                    <li>{video.id.videoId}</li>  
                     </div>
                 )
 
