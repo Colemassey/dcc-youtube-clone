@@ -5,17 +5,19 @@ import YoutubeEmbed from "./YoutubeEmbed";
 
 
 function VideoPlayer(props) {
+  console.log(props.searchVideoID)
+  console.log(props.videoTitle)
   return (
     <div className="App">
-   <Card style={{ width: '72rem' }}>
+   <Card style={{ width: '100rem' }}>
    <Card.Header>Youtube Playa</Card.Header>
 <Card.Title>Press the button Playa</Card.Title>
 {/* Iframe is in the Youtubeembed component */}
 <YoutubeEmbed embedId={props.searchVideoID} /> 
   <Card.Body>
-    <Card.Title>Video Title goes here</Card.Title>
+    <Card.Title>{props.videoTitle}</Card.Title>
     <Card.Text>
-      Youtube video description goes here
+     {props.videoDescription}
     </Card.Text>
     {/* <Comment /> */}
     </Card.Body>
