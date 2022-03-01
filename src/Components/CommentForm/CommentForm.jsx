@@ -15,9 +15,10 @@ const CommentForm = (props) => {
         props.loginUser(comments)
     }
 
-    async function handleEdit(requestBody) {
-      const response = await axios.put(`'http://127.0.0.1:8000/api/auth/${editingId}/replies`, requestBody).then((response)=> response).catch((error)=> console.log(error));  
-      props.updateComments(response) 
+    async function postComment(){
+      let response = await axios.post('http://127.0.0.1:8000/api/comments/')
+
+    }
   };
 
     return (

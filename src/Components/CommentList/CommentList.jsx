@@ -1,4 +1,4 @@
-import CommentForm from "../CommentForm/CommentForm";
+
 
 
 const CommentList = (props) => {

@@ -7,7 +7,7 @@ import RelatedVideos from '../RelatedVideos/RelatedVideos';
 const HomePage = (props) => {
     
     const [searchVideoID, setSearchVideoID] = useState("dQw4w9WgXcQ")
-    const [relatedVideo, setRelatedVideo] = useState([])
+    
     
 
     async function searchYouTube(searchTerm) {
@@ -17,16 +17,7 @@ const HomePage = (props) => {
     }
     
 
-    async function getRelatedVideos (searchVideoID) {
-        let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${searchVideoID}&type=video&key=AIzaSyCA_6OGhIBDkYUzdjQOPRD535rx3l8GyP8`);
-        console.log(response.data)
-        let relatedVideos = response.data.items.map(video)
-        setRelatedVideo(relatedVideos)
-    }
-        
-    useEffect(() => {
-        getRelatedVideos(searchVideoID)
-    }, [])
+   
    
     
         return ( 
@@ -34,7 +25,7 @@ const HomePage = (props) => {
         <div>
             <SearchBar searchYouTube={searchYouTube}  />
             <VideoPlayer searchVideoID={searchVideoID} />
-            <RelatedVideos relatedVideos={relatedVideo} />
+            <RelatedVideos searchVideoID={searchVideoID} />
         </div>
         )
 

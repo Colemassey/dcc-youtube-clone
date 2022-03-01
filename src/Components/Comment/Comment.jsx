@@ -4,7 +4,8 @@ import CommentList from "../CommentList/CommentList";
 
 const Comment = (props) => {
 
-    // const [editingId, setEditingId] = useState(undefined)
+    const [videoComments, setVideoComments] = useState('')
+
 
     async function getAllComments() {
         let response = await axios.get('http://127.0.0.1:8000/all/<str:video_id>');
@@ -12,7 +13,9 @@ const Comment = (props) => {
     
       }
 
-      
+      useEffect(() => {
+        getAllComments()
+    }, [])  
 
     return ( 
         <div>
