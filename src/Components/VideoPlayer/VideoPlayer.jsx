@@ -1,8 +1,6 @@
 import React from "react";
 import { Card } from 'react-bootstrap';
-import {ListGroup, ListGroupItem} from 'react-bootstrap';
 import YoutubeEmbed from "./YoutubeEmbed";
-import HomePage from "../HomePage/HomePage";
 
 function VideoPlayer() {
   return (
@@ -16,18 +14,10 @@ function VideoPlayer() {
     <Card.Text>
       Youtube video description goes here
     </Card.Text>
-  </Card.Body>
-  <ListGroup className="list-group-flush">
-    <ListGroupItem>Video Reccomendation goes here</ListGroupItem>
-    <ListGroupItem>Video Reccomendation goes here</ListGroupItem>
-    <ListGroupItem>Video Reccomendation goes here</ListGroupItem>
-  </ListGroup>
-  <Card.Body>
-    <Card.Link href="#">Links if we want</Card.Link>
-    <Card.Link href="#">Another Link</Card.Link>
-  </Card.Body>
+    </Card.Body>
 </Card>
     </div>
   );
 }
+
 export default VideoPlayer;
