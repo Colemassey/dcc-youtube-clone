@@ -7,22 +7,28 @@ const RelatedVideos = (props) => {
       
     async function getRelatedVideos () {
         // console.log(props.searchVideoID)
-        let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${props.searchVideoID}&type=video&key=AIzaSyDV6dRIL0aN2Prtp4E0bWbGmsCYuyrvgD0`);
-        // console.log(response.data)
+        let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${props.searchVideoID}&type=video&key=AIzaSyDeLrZDg_tPMfEHwTc8fmDu6msxgdXpV2o`);
+        console.log(response.data)
         setRelatedVideo(response.data.items)
     }
         
     useEffect(() => {
         getRelatedVideos()
     }, [props.searchVideoID])
+    
+    // const handleClick = (video) =>{
+    //     props.setSearchVideoID(video.id.videoId)
+    //     props.setSearchTitle(video.snippet.title)
+    //     props.setSearchDescription(video.snippet.description)
+    // }
 
         return (
             relatedVideo.map((video) => {
-                // console.log(video)
+               console.log(video)
                 if(video.snippet !== undefined){
                 return (
                     <div>
-                    <li>{video.id.videoId}</li>  
+                    <a onClick={() => props.setSearchTitle(video.snippet.title)}  ><img src={video.snippet.thumbnails.default.url} alt="Logo" /></a>  
                     </div>
                 )
                 }
