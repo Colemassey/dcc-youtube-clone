@@ -10,7 +10,8 @@ function VideoPlayer(props) {
    <Card style={{ width: '72rem' }}>
    <Card.Header>Youtube Playa</Card.Header>
 <Card.Title>Press the button Playa</Card.Title>
-<YoutubeEmbed embedId={props.searchVideoID} />
+{/* Iframe is in the Youtubeembed component */}
+<YoutubeEmbed embedId={props.searchVideoID} /> 
   <Card.Body>
     <Card.Title>Video Title goes here</Card.Title>
     <Card.Text>
