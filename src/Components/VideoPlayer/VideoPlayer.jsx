@@ -17,7 +17,6 @@ function VideoPlayer(props) {
     <Card.Text>
       Youtube video description goes here
     </Card.Text>
- 
   </Card.Body>
 </Card>
     </div>
