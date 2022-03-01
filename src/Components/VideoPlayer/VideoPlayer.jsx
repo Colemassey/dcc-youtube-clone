@@ -2,13 +2,16 @@ import React from "react";
 import { Card } from 'react-bootstrap';
 import YoutubeEmbed from "./YoutubeEmbed";
 
-function VideoPlayer() {
+
+
+function VideoPlayer(props) {
   return (
     <div className="App">
    <Card style={{ width: '72rem' }}>
    <Card.Header>Youtube Playa</Card.Header>
 <Card.Title>Press the button Playa</Card.Title>
-<YoutubeEmbed embedId="rokGy0huYEA" />
+{/* Iframe is in the Youtubeembed component */}
+<YoutubeEmbed embedId={props.searchVideoID} /> 
   <Card.Body>
     <Card.Title>Video Title goes here</Card.Title>
     <Card.Text>
@@ -18,6 +21,6 @@ function VideoPlayer() {
 </Card>
     </div>
   );
-}
+  }
 
 export default VideoPlayer;
