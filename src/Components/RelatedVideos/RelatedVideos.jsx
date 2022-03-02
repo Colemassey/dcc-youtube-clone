@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import {Container} from 'react-bootstrap'
 
 const RelatedVideos = (props) => {
     const [relatedVideo, setRelatedVideo] = useState([])
@@ -24,11 +25,14 @@ const RelatedVideos = (props) => {
 
         return (
             relatedVideo.map((video) => {
-            //    console.log(video)
+               console.log(video)
                 if(video.snippet !== undefined){
                 return (
                     <div>
-                    <a onClick={() => handleClick(video)}  ><img src={video.snippet.thumbnails.default.url} alt="Logo" /></a>  
+                        <Container>
+                            <a onClick={() => handleClick(video)}  ><img src={video.snippet.thumbnails.default.url} alt="Logo" /></a>
+                            <a>{video.snippet.title}</a>  
+                        </Container>
                     </div>
                 )
                 }
