@@ -27,7 +27,6 @@ const HomePage = (props) => {
     return ( 
 
         <div>
-
             <SearchBar searchYouTube={searchYouTube}  />
             <VideoPlayer searchVideoID={searchVideoID} videoTitle={videoTitle} videoDescription={videoDescription} />
             <RelatedVideos searchVideoID={searchVideoID} setSearchVideoID={setSearchVideoID} setVideoTitle={setVideoTitle} setVideoDescription={setVideoDescription} />
