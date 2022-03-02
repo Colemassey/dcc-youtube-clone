@@ -2,6 +2,7 @@ import React from "react";
 import { Card } from 'react-bootstrap';
 import YoutubeEmbed from "./YoutubeEmbed";
 import Comment from "../Comment/Comment";
+import DisplayComment from "../CommentList/CommentList";
 
 
 
@@ -18,18 +19,11 @@ function VideoPlayer(props) {
     <Card.Text>
      {props.videoDescription}
     </Card.Text>
-    <Card.Title>DisplayComment</Card.Title>
-    <Card.Text>
-    <Comment/>
-    </Card.Text>
-    <Card.Title>CreateComment</Card.Title>
-    <Card.Text>
-    TaterTots
-    </Card.Text>
+    <Card.Title>Create Comment</Card.Title>
+    <Comment searchVideoID={props.searchVideoID} />
+    <Card.Title>DIsplayComment</Card.Title>
+    <DisplayComment searchVideoID={props.searchVideoID} />
     <Card.Title>Like/Dislike</Card.Title>
-    <Card.Text>
-      TaterTots
-    </Card.Text>
     </Card.Body>
 </Card>
     </div>

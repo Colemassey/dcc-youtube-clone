@@ -1,35 +1,42 @@
 import axios from 'axios';
 import React, {useState} from 'react';
 
-
 const Comment = (props) => {
-        const [user, setUser] = useState('')
-        const [comment, setComment] = useState('')
+        const [videoId, setVideoId]= useState('')
+        const [text, setText] = useState('')
+        const [likes, setLikes] = useState(0)
+        const [dislikes, setdisLikes]= useState(0)
+
+        const[newComment, setNewComment] = useState({})
+      
+
+
+
+
         function handleSubmit(event) {
             event.preventDefault();
             let newComment = {
-                name: user,
-                comment: comment,
-                reaction: 'neutral'
+                videoId: props.searchVideoID,
+                text: text,
+                likes: likes,
+                dislikes: dislikes,
             };
-            props.addNewPostProperty(newComment)
-            setUser('')
-            setComment('')
+            CreateComment(newComment)
+            setNewComment(newComment)
         }
-        async function CreateComment(){
-            let response = await axios.post('http://127.0.0.1:8000/api/comments/')
+
+        async function CreateComment(newComment){
+            let response = await axios.post('http://127.0.0.1:8000/api/comments/', newComment, { headers: {Authorization: 'Bearer ' + props.jwt}})
             console.log(response)
             if(response.status === 201){
-                setComment()
+                await props.getAllComments()
         }
     }
         return (
             <form onSubmit={handleSubmit}>
                 <div className='form-group'>
-                    <label>Name:</label>
-                    <input required type='text' className="form-control" value={user} onChange={(event) => setUser(event.target.value)} />
                 <label>Post:</label>
-                    <input required type='text' className="form-control" value={comment} onChange={(event) => setComment(event.target.value)} />
+                    <input required type='text' className="form-control" value={text} onChange={(event) => setText(event.target.value)} />
                     <button type='submit' className="btn btn-primary" style={{'marginTop': '1em'}}>Post</button>
                 </div>
             </form>
