@@ -1,24 +1,27 @@
-
+mport LikeButton from "./LikeDislike";
 
 
 const CommentList = (props) => {
 
+    
     return (
-        <table>
-            {props.videoComments.map((comment) => {
+        <table className="borderLine">
+          {props.parentPosts.map((post, index) => {
             return (
                 <tbody>
-                    <tr>
-                        <td>{user.username}</td>
+                    <tr style={{'marginTop': '1em'}}>
+                        <th>{post.name}</th>
                     </tr>
-                    <tr>
-                        <td>{comment.text}</td>
+                    <tr style={{'marginTop': '1em'}}>
+                        <td>{post.post}</td>
+                    </tr>
+                    <tr style={{'marginTop': '1em'}}>
+                    <td><LikeButton onLikeClick={props.onLikeClick} onDislikeClick={props.onDislikeClick} index={index} post={post}  /></td>
                     </tr>
                 </tbody>
-            )
-        })}
-        </table>
-    );
+            );
+          })}
+      </table>
+     );
 }
- 
 export default CommentList;

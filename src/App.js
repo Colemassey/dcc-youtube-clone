@@ -42,6 +42,7 @@ function App() {
     console.log(response)
     if(response.status === 200){
       localStorage.setItem('token', response.data.access)
+      window.location.reload(false)
       navigate('/')
     }
   }
@@ -49,7 +50,9 @@ function App() {
   function logOut(){
     console.log('Logout Triggered');
     localStorage.removeItem('token');
+    setUser(null)
     window.location = "/"
+    navigate("/")
   }
 
   return (
@@ -60,7 +63,7 @@ function App() {
           <Route exact path='/' element={<HomePage/>} />
           <Route path='register' element= {<RegistrationForm createUser={createUser} />} />
           <Route path='login' element = {<LoginForm loginUser={loginUser} />} />
-          <Route path= '/' element={<HomePage logOut={logOut} />} />
+          <Route path= 'logout' element={<HomePage logOut={logOut} />} />
         </Routes>
       </div>
     </div>

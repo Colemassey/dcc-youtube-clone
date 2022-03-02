@@ -1,28 +1,38 @@
+import axios from 'axios';
 import React, {useState} from 'react';
-import CommentForm from "../CommentForm/CommentForm";
-import CommentList from "../CommentList/CommentList";
+
 
 const Comment = (props) => {
-
-    const [videoComments, setVideoComments] = useState('')
-
-
-    async function getAllComments() {
-        let response = await axios.get('http://127.0.0.1:8000/all/<str:video_id>');
-        setVideoComments(response.data);
-    
-      }
-
-      useEffect(() => {
-        getAllComments()
-    }, [])  
-
-    return ( 
-        <div>
-            <CommentForm  />
-            <CommentList  />
-        </div>
-     );
-}
- 
+        const [user, setUser] = useState('')
+        const [comment, setComment] = useState('')
+        function handleSubmit(event) {
+            event.preventDefault();
+            let newComment = {
+                name: user,
+                comment: comment,
+                reaction: 'neutral'
+            };
+            props.addNewPostProperty(newComment)
+            setUser('')
+            setComment('')
+        }
+        async function CreateComment(){
+            let response = await axios.post('http://127.0.0.1:8000/api/comments/')
+            console.log(response)
+            if(response.status === 201){
+                setComment()
+        }
+    }
+        return (
+            <form onSubmit={handleSubmit}>
+                <div className='form-group'>
+                    <label>Name:</label>
+                    <input required type='text' className="form-control" value={user} onChange={(event) => setUser(event.target.value)} />
+                <label>Post:</label>
+                    <input required type='text' className="form-control" value={comment} onChange={(event) => setComment(event.target.value)} />
+                    <button type='submit' className="btn btn-primary" style={{'marginTop': '1em'}}>Post</button>
+                </div>
+            </form>
+        );
+    }
 export default Comment;

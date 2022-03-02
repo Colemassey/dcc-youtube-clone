@@ -22,7 +22,7 @@ const NavigationBar = ({ user, logOut }) => {
                 {user &&
                     <React.Fragment>
                         <li>
-                            <Link to ='/' onClick={() =>  logOut()}>Logout Button</Link>
+                            <Link to ='/logout' onClick={() =>  logOut()}>Logout</Link>
                         </li>
                     </React.Fragment>
                 }
