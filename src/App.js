@@ -43,6 +43,11 @@ function App() {
       navigate('/')
     }
   }
+
+  function logOut(user){
+    localStorage.clear();
+  }
+
   return (
     <div>
       <NavigationBar user={user} />
@@ -51,6 +56,7 @@ function App() {
           <Route exact path='/' element={<HomePage/>} />
           <Route path='register' element= {<RegistrationForm createUser={createUser} />} />
           <Route path='login' element = {<LoginForm loginUser={loginUser} />} />
+          <Route path= '/logout' element={<HomePage logOut={logOut} />} />
         </Routes>
       </div>
     </div>
