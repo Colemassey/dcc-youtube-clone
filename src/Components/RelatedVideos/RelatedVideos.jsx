@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import {Container} from 'react-bootstrap'
+import {Card} from 'react-bootstrap'
 
 const RelatedVideos = (props) => {
     const [relatedVideo, setRelatedVideo] = useState([])
@@ -8,7 +8,7 @@ const RelatedVideos = (props) => {
       
     async function getRelatedVideos () {
         // console.log(props.searchVideoID)
-        let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${props.searchVideoID}&type=video&key=AIzaSyDeLrZDg_tPMfEHwTc8fmDu6msxgdXpV2o`);
+        let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${props.searchVideoID}&type=video&key=AIzaSyDV6dRIL0aN2Prtp4E0bWbGmsCYuyrvgD0`);
         // console.log(response.data)
         setRelatedVideo(response.data.items)
     }
@@ -29,10 +29,14 @@ const RelatedVideos = (props) => {
                 if(video.snippet !== undefined){
                 return (
                     <div>
-                        <Container>
+                        <Card>
+                            <Card.Body>
                             <a onClick={() => handleClick(video)}  ><img src={video.snippet.thumbnails.default.url} alt="Logo" /></a>
-                            <a>{video.snippet.title}</a>  
-                        </Container>
+                                <Card.Title>
+                                    <a>{video.snippet.title}</a> 
+                                </Card.Title> 
+                            </Card.Body>
+                        </Card>
                     </div>
                 )
                 }

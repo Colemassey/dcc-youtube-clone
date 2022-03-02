@@ -16,7 +16,7 @@ const HomePage = (props) => {
     
 
     async function searchYouTube(searchTerm) {
-        let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyDeLrZDg_tPMfEHwTc8fmDu6msxgdXpV2o&part=snippet&type=video&q=${searchTerm}`);
+        let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyDV6dRIL0aN2Prtp4E0bWbGmsCYuyrvgD0&part=snippet&type=video&q=${searchTerm}`);
         // console.log(response.data)
         setSearchVideoID(response.data.items[0].id.videoId)
         setVideoTitle(response.data.items[0].snippet.title)
@@ -31,6 +31,7 @@ const HomePage = (props) => {
     return ( 
 
         <div>
+
             <SearchBar searchYouTube={searchYouTube}  />
             <VideoPlayer searchVideoID={searchVideoID} videoTitle={videoTitle} videoDescription={videoDescription} />
             <RelatedVideos searchVideoID={searchVideoID} setSearchVideoID={setSearchVideoID} setVideoTitle={setVideoTitle} setVideoDescription={setVideoDescription} />

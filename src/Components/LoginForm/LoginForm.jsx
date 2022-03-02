@@ -16,7 +16,7 @@ const LoginForm = (props) => {
             password: password
         }
         props.loginUser(credentials)
-        navigate('/Dashboard')
+        navigate('/')
     }
     
     return ( 
