@@ -40,7 +40,7 @@ const LoginForm = (props) => {
   </Button>
 </Form>
 
-     );
+);
 }
  
 export default LoginForm;

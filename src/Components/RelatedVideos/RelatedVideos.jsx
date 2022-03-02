@@ -8,7 +8,7 @@ const RelatedVideos = (props) => {
     async function getRelatedVideos () {
         // console.log(props.searchVideoID)
         let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${props.searchVideoID}&type=video&key=AIzaSyDeLrZDg_tPMfEHwTc8fmDu6msxgdXpV2o`);
-        console.log(response.data)
+        // console.log(response.data)
         setRelatedVideo(response.data.items)
     }
         
@@ -16,19 +16,19 @@ const RelatedVideos = (props) => {
         getRelatedVideos()
     }, [props.searchVideoID])
     
-    // const handleClick = (video) =>{
-    //     props.setSearchVideoID(video.id.videoId)
-    //     props.setSearchTitle(video.snippet.title)
-    //     props.setSearchDescription(video.snippet.description)
-    // }
+    const handleClick = (video) =>{
+        props.setSearchVideoID(video.id.videoId)
+        props.setVideoTitle(video.snippet.title)
+        props.setVideoDescription(video.snippet.description)
+    }
 
         return (
             relatedVideo.map((video) => {
-               console.log(video)
+            //    console.log(video)
                 if(video.snippet !== undefined){
                 return (
                     <div>
-                    <a onClick={() => props.setSearchTitle(video.snippet.title)}  ><img src={video.snippet.thumbnails.default.url} alt="Logo" /></a>  
+                    <a onClick={() => handleClick(video)}  ><img src={video.snippet.thumbnails.default.url} alt="Logo" /></a>  
                     </div>
                 )
                 }

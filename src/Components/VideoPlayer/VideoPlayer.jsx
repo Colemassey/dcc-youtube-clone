@@ -5,8 +5,8 @@ import YoutubeEmbed from "./YoutubeEmbed";
 
 
 function VideoPlayer(props) {
-  console.log(props.searchVideoID)
-  console.log(props.videoTitle)
+  // console.log(props.searchVideoID)
+  // console.log(props.videoTitle)
   return (
     <div className="App">
    <Card style={{ width: '100rem' }}>
