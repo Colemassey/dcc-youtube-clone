@@ -12,10 +12,12 @@ import HomePage from './Components/HomePage/HomePage';
 function App() {
   
   const [user, setUser] = useState(null)
+  
   let navigate = useNavigate();
   useEffect(() => {
 
     const jwt = localStorage.getItem('token');
+    
     try {
       const decodedUser = jwt_decode(jwt);
       setUser(decodedUser);
@@ -34,8 +36,10 @@ function App() {
   }
   async function loginUser(user){
     console.log(user)
-    let response = await axios.post('http://127.0.0.1:8000/api/auth/login/')
-    if(response.data === 201){
+    let response = await axios.post('http://127.0.0.1:8000/api/auth/login/', user);
+    console.log(response)
+    if(response.status === 200){
+      localStorage.setItem('token', response.data.access)
       navigate('/')
     }
   }

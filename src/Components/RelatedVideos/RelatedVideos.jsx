@@ -25,7 +25,7 @@ const RelatedVideos = (props) => {
 
         return (
             relatedVideo.map((video) => {
-               console.log(video)
+            //    console.log(video)
                 if(video.snippet !== undefined){
                 return (
                     <div>

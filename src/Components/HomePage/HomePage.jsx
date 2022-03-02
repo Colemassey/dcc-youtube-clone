@@ -23,10 +23,6 @@ const HomePage = (props) => {
         setVideoDescription(response.data.items[0].snippet.description)
         
     }
-        // useEffect(() => {
-        //    setVideoTitle(videoTitle)
-        //    setVideoDescription(videoDescription)
-        // }, [searchVideoID])
             
     return ( 
 
