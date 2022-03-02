@@ -9,10 +9,12 @@ import axios from 'axios';
 import HomePage from './Components/HomePage/HomePage';
 
 
+
 function App() {
   
   const [user, setUser] = useState(null)
   
+
   let navigate = useNavigate();
   useEffect(() => {
 
@@ -43,9 +45,11 @@ function App() {
       navigate('/')
     }
   }
-
-  function logOut(user){
-    localStorage.clear();
+  
+  function logOut(){
+    console.log('Logout Triggered');
+    localStorage.removeItem('token');
+    window.location = "/"
   }
 
   return (
@@ -56,7 +60,7 @@ function App() {
           <Route exact path='/' element={<HomePage/>} />
           <Route path='register' element= {<RegistrationForm createUser={createUser} />} />
           <Route path='login' element = {<LoginForm loginUser={loginUser} />} />
-          <Route path= '/logout' element={<HomePage logOut={logOut} />} />
+          <Route path= '/' element={<HomePage logOut={logOut} />} />
         </Routes>
       </div>
     </div>
