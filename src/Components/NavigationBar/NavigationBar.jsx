@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const NavigationBar = ({ user }) => {
+const NavigationBar = ({ user, logOut }) => {
     return(
         <div>
             {user && <h4>Welcome {user.username}</h4>}
@@ -22,7 +22,7 @@ const NavigationBar = ({ user }) => {
                 {user &&
                     <React.Fragment>
                         <li>
-                            <Link to ='/logout'>Logout</Link>
+                            <Link to ='/' onClick={() =>  logOut()}>Logout Button</Link>
                         </li>
                     </React.Fragment>
                 }
