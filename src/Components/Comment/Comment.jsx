@@ -28,7 +28,7 @@ const Comment = (props) => {
         async function CreateComment(newComment){
             console.log(props.jwt)
             let response = await axios.post('http://127.0.0.1:8000/api/comments/', newComment, { headers: {Authorization: 'Bearer ' + props.jwt}})
-            console.log(response)
+            // console.log(response)
             if(response.status === 201){
                 await props.getAllComments()
         }

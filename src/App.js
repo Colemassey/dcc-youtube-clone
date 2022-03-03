@@ -60,7 +60,7 @@ function App() {
       <NavigationBar user={user} logOut={logOut} />
       <div>
         <Routes>
-          <Route exact path='/' element={<HomePage/>} />
+          <Route exact path='/' element={<HomePage />} />
           <Route path='register' element= {<RegistrationForm createUser={createUser} />} />
           <Route path='login' element = {<LoginForm loginUser={loginUser} />} />
           <Route path= 'logout' element={<HomePage logOut={logOut} />} />

@@ -18,10 +18,10 @@ const NavigationBar = ({ user, logOut }) => {
                 {!user &&
                     <React.Fragment>
                         <li className='registerLi'>
-                            <Link to='/register' class="button1">Register</Link>
+                            <Link to='/register' className="button1">Register</Link>
                         </li>
                         <li>
-                            <Link to='/login' class="button1">Login</Link>
+                            <Link to='/login' className="button1">Login</Link>
                         </li>
                     </React.Fragment>
                 }
