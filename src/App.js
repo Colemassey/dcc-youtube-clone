@@ -14,6 +14,8 @@ function App() {
   
   const [user, setUser] = useState(null)
   console.log(user)
+  const [jwt, setJwt] = useState('')
+  console.log(jwt)
  
 
   let navigate = useNavigate();
@@ -24,6 +26,7 @@ function App() {
     try {
       const decodedUser = jwt_decode(jwt);
       setUser(decodedUser);
+      setJwt(jwt)
 
     } catch { }
   }, [])
@@ -61,7 +64,7 @@ function App() {
       <NavigationBar user={user} logOut={logOut} />
       <div>
         <Routes>
-          <Route exact path='/' element={<HomePage />} />
+          <Route exact path='/' element={<HomePage jwt={jwt} user={user} />} />
           <Route path='register' element= {<RegistrationForm createUser={createUser} />} />
           <Route path='login' element = {<LoginForm loginUser={loginUser} />} />
           <Route path= 'logout' element={<HomePage logOut={logOut} />} />

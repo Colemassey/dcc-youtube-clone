@@ -28,7 +28,7 @@ const HomePage = (props) => {
 
         <div>
             <SearchBar searchYouTube={searchYouTube}  />
-            <VideoPlayer searchVideoID={searchVideoID} videoTitle={videoTitle} videoDescription={videoDescription} jwt={props.jwt} />
+            <VideoPlayer searchVideoID={searchVideoID} videoTitle={videoTitle} videoDescription={videoDescription} jwt={props.jwt} user={props.user} />
             <RelatedVideos searchVideoID={searchVideoID} setSearchVideoID={setSearchVideoID} setVideoTitle={setVideoTitle} setVideoDescription={setVideoDescription} />
         </div>
     )

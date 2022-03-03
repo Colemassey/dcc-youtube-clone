@@ -16,6 +16,7 @@ const Comment = (props) => {
         function handleSubmit(event) {
             event.preventDefault();
             let newComment = {
+                user_id: props.user.user_id,
                 videoId: props.searchVideoID,
                 text: text,
                 likes: likes,
@@ -27,7 +28,7 @@ const Comment = (props) => {
 
         async function CreateComment(newComment){
             console.log(props.jwt)
-            let response = await axios.post('http://127.0.0.1:8000/api/comments/', newComment, { headers: {Authorization: 'Bearer ' + props.jwt}})
+            let response = await axios.post(`http://127.0.0.1:8000/api/comments/${props.user_id}`, newComment, { headers: {Authorization: 'Bearer ' + props.jwt}})
             // console.log(response)
             if(response.status === 201){
                 await props.getAllComments()

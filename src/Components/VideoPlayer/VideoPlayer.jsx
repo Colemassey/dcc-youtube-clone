@@ -22,7 +22,7 @@ function VideoPlayer(props) {
             {props.videoDescription}
           </Card.Text>
           <Card.Title>Create Comment</Card.Title>
-          <Comment searchVideoID={props.searchVideoID} />
+          <Comment searchVideoID={props.searchVideoID} jwt={props.jwt} user={props.user} />
           <Card.Title>DisplayComment</Card.Title>
           <DisplayComment searchVideoID={props.searchVideoID} />
           <Card.Title>Like/Dislike</Card.Title>
