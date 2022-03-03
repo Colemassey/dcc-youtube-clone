@@ -13,6 +13,7 @@ import HomePage from './Components/HomePage/HomePage';
 function App() {
   
   const [user, setUser] = useState(null)
+  console.log(user)
  
 
   let navigate = useNavigate();
