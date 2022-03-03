@@ -19,12 +19,12 @@ const SearchBar = (props) => {
         <Container>
             <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3">
-            <Form.Control input="search" type='text' name="searchTerm" value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} size='lg' />
+            <Form.Control input="search" placeholder="Search..." type='text' name="searchTerm" value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} size='lg' />
             <input type="button" value="Search" type="submit" className="btn btn-info" /> 
             </Form.Group>
             </Form>
         </Container>
      );
 }
- 
+
 export default SearchBar;
