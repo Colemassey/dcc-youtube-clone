@@ -1,24 +1,35 @@
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 
 
+const DisplayComment = (props) => {
+    const[allComments, setAllComments] = useState([])
 
-const CommentList = (props) => {
+    async function getAllComments(){
+        let response = await axios.get(`http://127.0.0.1:8000/api/comments/all/${props.searchVideoID}`);
+        console.log(response)
+        setAllComments(response.data);
+    }
+
+    useEffect(() => {
+        getAllComments()
+    }, [props.searchVideoID])
 
     return (
-        <table>
-            {props.videoComments.map((comment) => {
+        <table className="borderLine">
+          {allComments.map((comment) => {
             return (
                 <tbody>
-                    <tr>
-                        <td>{user.username}</td>
+                    <tr style={{'marginTop': '1em'}}>
+                        <th>{comment.name}</th>
                     </tr>
-                    <tr>
-                        <td>{comment.text}</td>
+                    <tr style={{'marginTop': '1em'}}>
+                        <td>{comment.comments}</td>
                     </tr>
                 </tbody>
-            )
-        })}
+            );
+          })}
         </table>
-    );
-}
- 
-export default CommentList;
+        );
+        }
+export default DisplayComment;

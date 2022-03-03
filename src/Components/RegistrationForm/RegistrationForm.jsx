@@ -66,8 +66,7 @@ const RegistrationForm = (props) => {
           <Form.Label>Password Again</Form.Label>
           <Form.Control type="password" placeholder="Password Again" onChange={(event) => setPassword(event.target.value)}/>
         </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
+        <Button variant="primary" type="submit" >
         </Button>
       </Form>
       //         </Modal.Body>

@@ -35,7 +35,7 @@ const LoginForm = (props) => {
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicCheckbox">
   </Form.Group>
-  <Button variant="primary" type="submit">
+  <Button variant="primary" type="submit" >
     Submit
   </Button>
 </Form>

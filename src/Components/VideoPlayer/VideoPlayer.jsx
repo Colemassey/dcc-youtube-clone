@@ -1,6 +1,8 @@
 import React from "react";
 import { Card } from 'react-bootstrap';
 import YoutubeEmbed from "./YoutubeEmbed";
+import Comment from "../Comment/Comment";
+import DisplayComment from "../CommentList/CommentList";
 
 
 
@@ -10,8 +12,6 @@ function VideoPlayer(props) {
   return (
     <div className="App">
    <Card style={{ width: '100rem' }}>
-   <Card.Header>Youtube Playa</Card.Header>
-<Card.Title>Press the button Playa</Card.Title>
 {/* Iframe is in the Youtubeembed component */}
 <YoutubeEmbed embedId={props.searchVideoID} /> 
   <Card.Body>
@@ -19,7 +19,11 @@ function VideoPlayer(props) {
     <Card.Text>
      {props.videoDescription}
     </Card.Text>
-    {/* <Comment /> */}
+    <Card.Title>Create Comment</Card.Title>
+    <Comment searchVideoID={props.searchVideoID} />
+    <Card.Title>DIsplayComment</Card.Title>
+    <DisplayComment searchVideoID={props.searchVideoID} />
+    <Card.Title>Like/Dislike</Card.Title>
     </Card.Body>
 </Card>
     </div>
