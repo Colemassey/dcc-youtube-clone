@@ -28,11 +28,11 @@ const RelatedVideos = (props) => {
             //    console.log(video)
                 if(video.snippet !== undefined){
                 return (
-                    <div>
-                        <Card>
-                            <Card.Body>
-                            <a onClick={() => handleClick(video)}  ><img src={video.snippet.thumbnails.high.url} alt="Logo" /></a>
-                                <Card.Title>
+                    <div className='container'>
+                        <Card className='parent'>
+                            <Card.Body className='thumbnail'>
+                            <a onClick={() => handleClick(video)}  ><img src={video.snippet.thumbnails.default.url} alt="Logo" /></a>
+                                <Card.Title className='title'>
                                     <a>{video.snippet.title}</a> 
                                 </Card.Title> 
                             </Card.Body>
