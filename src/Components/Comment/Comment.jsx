@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, {useState} from 'react';
 
 const Comment = (props) => {
-        const [videoId, setVideoId]= useState('')
         const [text, setText] = useState('')
         const [likes, setLikes] = useState(0)
         const [dislikes, setdisLikes]= useState(0)
@@ -16,8 +15,8 @@ const Comment = (props) => {
         function handleSubmit(event) {
             event.preventDefault();
             let newComment = {
-                user_id: props.user.user_id,
-                videoId: props.searchVideoID,
+                user: props.user.user_id,
+                video_id: props.searchVideoID,
                 text: text,
                 likes: likes,
                 dislikes: dislikes,
@@ -27,8 +26,8 @@ const Comment = (props) => {
         }
 
         async function CreateComment(newComment){
-            console.log(props.jwt)
-            let response = await axios.post(`http://127.0.0.1:8000/api/comments/${props.user_id}`, newComment, { headers: {Authorization: 'Bearer ' + props.jwt}})
+            console.log(props.user.user_id)
+            let response = await axios.post(`http://127.0.0.1:8000/api/comments/${props.user.user_id}`, newComment, { headers: {Authorization: 'Bearer ' + props.jwt}})
             // console.log(response)
             if(response.status === 201){
                 await props.getAllComments()

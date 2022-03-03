@@ -4,6 +4,7 @@ import axios from 'axios';
 
 const DisplayComment = (props) => {
     const[allComments, setAllComments] = useState([])
+    console.log(allComments)
 
     async function getAllComments(){
         let response = await axios.get(`http://127.0.0.1:8000/api/comments/all/${props.searchVideoID}`);
