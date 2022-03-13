@@ -20,8 +20,6 @@ jobs:
     - name: Auto-Merge Pull Request
       uses: reitermarkus/automerge@v1.5.2
     
-    - name: Bump version and publish release action
-      uses: MeilCli/bump-release-action@v1.0.2
 
 
    
