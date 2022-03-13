@@ -17,9 +17,9 @@ jobs:
     - name: Run docker compose on dev files
       run: docker-compose -f "docker-compose-dev.yml" up -d --build
 
-    - name: Bump Versions
-      uses: remorses/bump-version@v8
-    
+    - name: Github Bumpversion Action
+      uses: jaumann/github-bumpversion-action@v0.0.6
+
     - name: Auto-Merge Pull Request
       uses: reitermarkus/automerge@v1.5.2
     
