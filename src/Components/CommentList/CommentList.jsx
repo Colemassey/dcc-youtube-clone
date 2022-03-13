@@ -19,6 +19,7 @@ const DisplayComment = (props) => {
     return (
         <table className="borderLine">
           {allComments.map((comment) => {
+              console.log(comment)
             return (
                 <tbody>
                     <tr style={{'marginTop': '1em'}}>
