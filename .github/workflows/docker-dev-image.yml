@@ -1,8 +1,5 @@
 name: Docker Dev Image CI
 
-env:
-  DATE_STAMP: $(date +%s)
-
 on:
   pull_request:
     branches: [main]
@@ -18,7 +15,5 @@ jobs:
     - name: Run docker compose on dev files
       run: docker-compose -f "docker-compose-dev.yml"  -t "brennanknopf/ytc-frontend:latest" up -d --build
 
-    - name:
-      run:
 
      
