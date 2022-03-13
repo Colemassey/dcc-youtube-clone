@@ -3,6 +3,8 @@ name: Docker Dev Image CI
 on:
   pull_request:
     branches: [main]
+    tags:
+    - '*'
   workflow_dispatch:
 
 jobs:
@@ -15,8 +17,8 @@ jobs:
     - name: Run docker compose on dev files
       run: docker-compose -f "docker-compose-dev.yml" up -d --build
 
-    # - name: Bump Versions
-    #   uses: remorses/bump-version@v8
+    - name: Bump Versions
+      uses: remorses/bump-version@v8
     
     - name: Auto-Merge Pull Request
       uses: reitermarkus/automerge@v1.5.2
