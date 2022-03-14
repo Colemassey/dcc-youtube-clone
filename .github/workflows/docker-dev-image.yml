@@ -25,7 +25,10 @@ jobs:
             git config --global user.email "brennanknopf@gmail.com"
             git config --global user.name "Brennan Knopf"
             npm version patch
-    
+
+    - name: Create/Update tag
+      uses: rickstaa/action-create-tag@v1.2.2
+
     - name: Create Release
       uses: ncipollo/release-action@v1
 
