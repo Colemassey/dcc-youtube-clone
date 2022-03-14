@@ -24,8 +24,7 @@ jobs:
       run: |
             git config --global user.email "brennanknopf@gmail.com"
             git config --global user.name "Brennan Knopf"
-            git pull package.json
-            git pull package-lock.json
+            git pull
             npm version patch
             git push --tags
             git update-ref refs/tags/v1.0
