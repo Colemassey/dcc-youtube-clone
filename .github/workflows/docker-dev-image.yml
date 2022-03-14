@@ -23,8 +23,8 @@ jobs:
     - name: Bump version number
       run: |
             npm version patch
-            git config --global user.email "you@example.com"
-            git config --global user.name "Your Name"
+            git config --global user.email "brennanknopf@gmail.com"
+            git config --global user.name "Brennan Knopf"
      
 
     
