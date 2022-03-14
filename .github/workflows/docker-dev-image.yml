@@ -1,13 +1,13 @@
 name: Docker Dev Image CI
  
 on:
-  create:
-      tags:
-        - v*
   pull_request:
     branches: [main]
    
   workflow_dispatch:
+  create:
+      tags:
+        - v*
 
   
 
