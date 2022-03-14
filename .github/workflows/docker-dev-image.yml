@@ -24,11 +24,9 @@ jobs:
       run: |
             git config --global user.email "brennanknopf@gmail.com"
             git config --global user.name "Brennan Knopf"
-            git pull package.json
-            git pul
             npm version patch
             git push --tags
-            git update -ref
+            git update-ref
 
     - name: Create Release
       uses: ncipollo/release-action@v1
