@@ -28,6 +28,7 @@ jobs:
             npm version patch
             git push --tags
             git push
+            git update-ref refs/tags/v1.0
       
 
     - name: Create Release
