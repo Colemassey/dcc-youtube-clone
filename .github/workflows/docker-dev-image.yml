@@ -26,8 +26,8 @@ jobs:
             git config --global user.name "Brennan Knopf"
             npm version patch
 
-    - name: Create Tag
-      uses: negz/create-tag@v1
+    - name: Create Tag Release
+      uses: beyond5959/create-release-github@v1
 
     - name: Create Release
       uses: ncipollo/release-action@v1
