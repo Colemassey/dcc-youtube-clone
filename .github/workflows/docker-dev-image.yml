@@ -44,12 +44,16 @@ jobs:
       with:
           version: ${{ steps.previoustag.outputs.tag }}
 
-    - name: Create Release
-      uses: ncipollo/release-action@v1
-      with:
-        artifacts: "release.tar.gz,foo/*.txt"
-        bodyFile: "body.md"
-        token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Automatic Releases
+      uses: marvinpinto/action-automatic-releases@v1.2.1
+      uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          files: |
+            LICENSE.txt
+            *.jar
+
 
 
 
