@@ -14,8 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Run docker compose on dev files
-      run: docker-compose -f "docker-compose-dev.yml" up -d --build
+    # - name: Run docker compose on dev files
+    #   run: docker-compose -f "docker-compose-dev.yml" up -d --build
 
     - name: Auto-Merge Pull Request
       uses: reitermarkus/automerge@v1.5.2
@@ -24,9 +24,11 @@ jobs:
       run: |
             git config --global user.email "brennanknopf@gmail.com"
             git config --global user.name "Brennan Knopf"
+            git pull package.json
+            git pull package-lock.json
             npm version patch
             git push --tags
-            git update-ref refs/heads/test
+            git update-ref refs/tags/v1.0
 
     - name: Create Release
       uses: ncipollo/release-action@v1
