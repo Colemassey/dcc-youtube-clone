@@ -29,7 +29,7 @@ jobs:
             npm version patch
             git push --tags
             git push
-            git update-ref HEAD
+            git update-ref HEAD $tag
 
     - name: Create Release
       uses: ncipollo/release-action@v1
