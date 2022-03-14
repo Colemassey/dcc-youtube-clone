@@ -3,9 +3,10 @@ name: Docker Dev Image CI
 on:
   pull_request:
     branches: [main]
-    tags:
-    - '*'
+   
   workflow_dispatch:
+   tags:
+    - 'v1.0.*'
 
 jobs:
   build:
@@ -28,7 +29,7 @@ jobs:
             npm version patch
             git push --tags
             git push
-            git update-ref refs/tags/v1.0
+            git update-ref refs/tags/
       
 
     - name: Create Release
