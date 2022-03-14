@@ -26,7 +26,7 @@ jobs:
             git config --global user.name "Brennan Knopf"
             npm version patch
             git push --tags
-            git update-ref efs/heads/test
+            git update-ref refs/heads/test
 
     - name: Create Release
       uses: ncipollo/release-action@v1
