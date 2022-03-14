@@ -25,9 +25,7 @@ jobs:
             git config --global user.email "brennanknopf@gmail.com"
             git config --global user.name "Brennan Knopf"
             npm version patch
-
-    - name: Create Tag Release
-      uses: beyond5959/create-release-github@v1
+            git push --tags
 
     - name: Create Release
       uses: ncipollo/release-action@v1
