@@ -36,10 +36,11 @@ jobs:
       id: previoustag
       uses: "WyriHaximus/github-action-get-previous-tag@v1"
       with:
-          fallback: 1.0.0 # Optional fallback tag to use when no tag can be found
+          fallback: 0.0.1 # Optional fallback tag to use when no tag can be found
 
-    - name: Create Release
-      uses: ncipollo/release-action@v1
+    - name: GitHub Create Tag Release
+      uses: Roang-zero1/github-create-release-action@v2.1.0
+
 
 
     
