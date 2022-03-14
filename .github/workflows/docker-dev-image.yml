@@ -26,8 +26,9 @@ jobs:
             git config --global user.name "Brennan Knopf"
             npm version patch
 
-    - name: Create/Update tag
-      uses: rickstaa/action-create-tag@v1.2.2
+    - name: GitHub Tag
+      uses: mathieudutour/github-tag-action@v6.0
+
 
     - name: Create Release
       uses: ncipollo/release-action@v1
