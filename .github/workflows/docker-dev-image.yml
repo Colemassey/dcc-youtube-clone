@@ -20,14 +20,9 @@ jobs:
     - name: Auto-Merge Pull Request
       uses: reitermarkus/automerge@v1.5.2
 
-    - name: Bump version and publish release action
-      uses: MeilCli/bump-release-action@v1.0.2
-      with:
-          config_path: '.github/bump.yml'
-          bump: ${{ github.event.inputs.bump }}
-          dry_run: ${{ github.event.inputs.dry_run }}
-          draft: ${{ github.event.inputs.draft }}
-          pre_release: ${{ github.event.inputs.pre_release }}
+    - name: Bump version number
+      run: npm version patch -m "[patch] %s"
+
     
 
 
