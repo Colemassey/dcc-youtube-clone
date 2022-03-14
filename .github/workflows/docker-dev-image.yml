@@ -20,12 +20,8 @@ jobs:
     - name: Auto-Merge Pull Request
       uses: reitermarkus/automerge@v1.5.2
 
-    - name: 'change version'
-        uses: reedyuk/npm-version@1.1.1
-        with:
-          version: '1.0.1'
-          package: 'subproject-directory/'
-          git-tag-version: 'true'
+    - name: Bump version number
+      run: npm version patch
 
     
 
